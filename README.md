@@ -122,6 +122,69 @@ docker-compose up -d
 - Access to an InfluxDB v2.x instance
 - Network connectivity between collector, MQTT broker, and InfluxDB
 
+
+Here’s the revised **GitHub summary** with step 4 removed and focused solely on the setup process:
+
+---
+
+## **Setting Up Qingping Devices to Publish to a Local MQTT Broker**
+
+### **Overview**
+Qingping devices can be configured to send real-time data to your **local MQTT broker**, allowing for better control and privacy. This guide outlines how to set up your local broker and configure Qingping devices using their web interface.
+
+---
+
+### **Steps to Configure Devices**
+
+#### 1. **Request Private MQTT Access**
+- **Contact Qingping** to enable **private MQTT** for your devices. 
+- This allows you to redirect data from Qingping’s cloud to your local MQTT broker.
+- For more details, refer to:  
+  [Private Communication Protocols - MQTT](https://developer.qingping.co/private/communication-protocols/public-mqtt-json)
+
+---
+
+#### 2. **Set Up Your Local MQTT Broker**
+- Install and configure an MQTT broker, such as:
+  - **Mosquitto**
+  - **EMQX**
+  - **HiveMQ**
+
+**Basic Setup**:
+- **Broker Address**: e.g., `192.168.x.x`
+- **Port**: `1883` (non-TLS) or `8883` (TLS for secure connections)
+- **Username** and **Password**: (if using broker authentication)
+
+---
+
+#### 3. **Configure Devices via Qingping Web Interface**
+To direct Qingping devices to your local broker:
+
+1. **Log into Qingping’s Device Management Portal**.
+   - URL provided by Qingping upon enabling private MQTT access.
+
+2. **Locate Your Devices**:
+   - Find your devices in the **Device Settings** section.
+
+3. **Update MQTT Settings**:
+   - **MQTT Server**: `tcp://<broker_address>:<port>`  
+     Example: `tcp://192.168.1.100:1883`
+   - **Username/Password**: Credentials for your local MQTT broker (if applicable).
+
+4. **Save and Apply Changes**:
+   - The devices will now publish data to your local MQTT broker.
+
+---
+
+### **Additional Resources**
+- [Qingping Private Communication Protocols](https://developer.qingping.co/private/communication-protocols/public-mqtt-json)  
+- [Device Settings Modification API](https://developer.qingping.co/cloud-to-cloud/open-apis)
+
+---
+
+Following these steps, Qingping devices will publish real-time data to your local MQTT broker, which is ready for further processing by this data collector.
+
+
 ### Monitoring
 - Check container logs: `docker logs qingping_collector.dev`
 - Monitor InfluxDB for data ingestion
