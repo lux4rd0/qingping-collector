@@ -40,7 +40,7 @@ class WifiInfo:
             return cls()
 
 
-class MQTTInfluxCollector:
+class QingpingMQTTCollector:
     def __init__(self):
         self.should_reconnect = True
         self.running = True
@@ -325,7 +325,7 @@ class MQTTInfluxCollector:
 if __name__ == "__main__":
     collector = None
     try:
-        collector = MQTTInfluxCollector()
+        collector = QingpingMQTTCollector()
         collector.start()
     except Exception as e:
         logging.error(f"Fatal error: {e}")
