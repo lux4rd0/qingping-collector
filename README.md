@@ -60,8 +60,8 @@
 | `INFLUXDB_TOKEN` | Authentication token for InfluxDB | - | Yes | `your-token-here` |
 | `INFLUXDB_ORG` | Organization name in InfluxDB | - | Yes | `myorg` |
 | `INFLUXDB_BUCKET` | Bucket name for data storage | - | Yes | `qingping` |
-| `INFLUXDB_BATCH_SIZE` | Number of points to batch | `500` | No | `500` |
-| `INFLUXDB_FLUSH_INTERVAL` | Flush interval in milliseconds | `10000` | No | `10000` |
+| `INFLUXDB_BATCH_SIZE` | Number of points to batch | `100` | No | `100` |
+| `INFLUXDB_FLUSH_INTERVAL` | Flush interval in milliseconds | `5000` | No | `5000` |
 | `INFLUXDB_ENABLE_GZIP` | Enable GZIP compression | `true` | No | `true` |
 | **General Settings** |
 | `LOG_LEVEL` | Logging verbosity level | `INFO` | No | `DEBUG` |
