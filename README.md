@@ -1,8 +1,8 @@
-# Qingping MQTT to InfluxDB Collector  
+# Qingping Air Monitor Lite MQTT to InfluxDB Collector  
 
-Welcome to the **Qingping MQTT to InfluxDB Collector**!  
+Welcome to the **Qingping Air Monitor Lite MQTT to InfluxDB Collector**!  
 
-This project helps you collect real-time data from Qingping devices using **MQTT** and stores it in **InfluxDB** for time-series analysis. This solution is perfect for monitoring environmental metrics with features like diagnostic data collection, error handling, and secure connections.  
+This project helps you collect real-time data from Qingping Air Monitor Lite using **MQTT** and stores it in **InfluxDB** for time-series analysis. This solution is perfect for monitoring environmental metrics with features like diagnostic data collection, error handling, and secure connections.  
 
 ![](https://labs.lux4rd0.com/wp-content/uploads/2024/11/qingping_air_quality_overview.png)
 
