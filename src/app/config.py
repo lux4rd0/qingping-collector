@@ -39,6 +39,17 @@ def validate_positive_int(value: int, name: str) -> None:
         raise ValueError(f"{name} must be a positive integer")
 
 
+# Use current time instead of payload timestamp
+USE_CURRENT_TIME = bool(int(os.getenv("USE_CURRENT_TIME", "1")))
+
+# Automatically set device intervals at startup
+SET_DEVICE_INTERVALS = bool(int(os.getenv("SET_DEVICE_INTERVALS", "0")))
+
+# Default intervals
+DEFAULT_REPORT_INTERVAL = int(os.getenv("DEFAULT_REPORT_INTERVAL", "10"))  # seconds
+DEFAULT_COLLECT_INTERVAL = int(os.getenv("DEFAULT_COLLECT_INTERVAL", "10"))  # seconds
+
+
 # Basic validation of numeric values
 try:
     validate_port(MQTT_BROKER_PORT)
